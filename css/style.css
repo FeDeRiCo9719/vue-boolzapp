@@ -4,3 +4,60 @@
     padding: 0%;
     box-sizing: border-box;
 }
+
+/*---------------------- COMMON ----------------------*/
+.background {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(20, 136, 120) 120px, rgb(199, 199, 199) 120px );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*---------------------- CONTAINER ----------------------*/
+.container {
+    height: 95%;
+    width: 80%;
+    display: flex;
+}
+
+/*------- container sections ------*/
+.left-box, .right-box {
+    display: flex;
+    flex-direction: column;
+}
+.left-box {
+    background-color: rgba(161, 112, 207, 0.164);
+    width: 40%;
+    border-right: 1px solid rgb(204, 204, 200);
+}
+.right-box {
+    width: 60%;
+    background-color: rgba(103, 141, 85, 0.301);
+}
+
+/*------- sections ------*/
+.name_user, .user_msg, .write_msg {
+    height: 60px;
+    background-color: rgb(219, 219, 215);
+}
+.notifiche {
+    height: 70px;
+    background-color: rgb(116, 196, 216);
+}
+.search {
+    height: 50px;
+    background-color: rgb(219, 219, 215);
+}
+.box_msg {
+    height: calc(100% - 120px); 
+    background-color: rgb(207, 204, 172);
+    overflow-y: scroll;
+}
+.users_list {
+    height: calc(100% - 180px); 
+    background-color: rgb(235, 235, 235);
+    overflow-y: scroll;
+}
