@@ -53,10 +53,6 @@ i:hover {
 }
 
 /*---------------------- container sections ----------------------*/
-.left-box, .right-box {
-    display: flex;
-    flex-direction: column;
-}
 .left-box {
     background-color: rgba(161, 112, 207, 0.164);
     width: 35%;
@@ -85,11 +81,6 @@ i:hover {
 .box_msg {
     height: calc(100% - 120px); 
     background-image: url("../img/mine.jpg");
-    overflow-y: scroll;
-}
-.users_list {
-    height: calc(100% - 180px); 
-    background-color: rgb(248, 248, 248);
     overflow-y: scroll;
 }
 
@@ -165,6 +156,32 @@ i:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/*---------------------- lista utenti ----------------------*/
+.users_list {
+    height: calc(100% - 180px); 
+    background-color: rgb(248, 248, 248);
+    overflow-y: scroll;
+}
+.box_user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 15px;
+    cursor: pointer;
+}
+.box_user:hover {
+    background-color: rgb(218, 218, 218);
+    transition: 0.1s;
+}
+.box_user:active {
+    background-color: lightgrey;
+}
+.users_list img {
+    width: 60px;
+    border-radius: 50%;
 }
 
 /*---------------------- scrivi un messaggio ----------------------*/
