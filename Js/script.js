@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '',
+    el: '#root',
     data: {
         contacts: [
             {

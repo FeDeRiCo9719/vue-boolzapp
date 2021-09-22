@@ -57,45 +57,9 @@
                 </div>
                 <!------------------------ lista utenti ------------------------>
                 <ul class="users_list">
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
-                    </li>
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
-                    </li>
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
-                    </li>
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
-                    </li>
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
-                    </li>
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
-                    </li>
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
-                    </li>
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
-                    </li>
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
-                    </li>
-                    <li class="box_user">                       
-                        <img src="img/avatar_5.jpg" alt="">                       
-                        <h3>Nome Utente</h3>
+                    <li v-for="(item, index) in contacts" :key='index' class="box_user">                       
+                        <img :src="`img/avatar${item.avatar}.jpg`" :alt="item.name">                       
+                        <h3>{{item.name}}</h3>
                     </li>
                 </ul>
 
