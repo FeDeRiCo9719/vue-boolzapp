@@ -87,7 +87,7 @@
                 <div class="chat">
                     <div class="white_msg_col" v-for="(item, index) in contacts[avatarIndex].messages"  :key='index' >
                         <div class="box_msg white_msg" >
-                            {{contacts[avatarIndex].messages[0].message}}
+                            {{contacts[avatarIndex].messages[index].message}}
                         </div>
                     </div>
                     <div class="green_msg_col">

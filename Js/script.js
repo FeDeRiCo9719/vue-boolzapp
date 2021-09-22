@@ -214,13 +214,16 @@ var app = new Vue({
             }
         ],
         avatarIndex:0,
+        msgIndex: 0,
         
     },
     methods: {
         showChat: function(index) {
-            console.log(index);
+            // console.log(index);
             this.avatarIndex = index;
-            console.log(this.avatarIndex);
+            // console.log(this.avatarIndex);
+            // this.msgIndex ++
+            // console.log(this.msgIndex);
         }
     }
 });
