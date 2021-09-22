@@ -61,7 +61,7 @@ i:hover {
 .container {
     font-family: 'Lato', sans-serif;
     height: 95%;
-    width: 80%;
+    width: 70%;
     box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.342);
     display: flex;
     color: rgb(158, 158, 158);
@@ -192,7 +192,7 @@ i:hover {
 }
 .box_user::after {
     content: '';
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(240, 240, 240);
     width: 85%;
     height: 2px;
     display: block;
@@ -214,28 +214,29 @@ i:hover {
 }
 .white_msg_col, .green_msg_col {
     width: 100%;
-    border: 1px solid rgba(255, 0, 0, 0.315);
+    /* border: 1px solid rgba(255, 0, 0, 0.315); */
     color: black;
+    margin-bottom: 10px;
+
+    display: flex;
 }
 .white_msg_col {
-    display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
 }
 .green_msg_col {
-    display: flex;
     justify-content: flex-end;
 }
-.white_msg_col div {
-    max-width: 360px;
+.white_msg {
     background-color: white;
 }
-.green_msg_col div {
-    max-width: 360px;
-    background-color: rgb(202, 247, 165);
+.green_msg {
+    background-color: rgb(211, 243, 184);
 }
 .box_msg {
-    margin-bottom: 10px;
+    max-width: 70%;
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.178);
 }
 
 /*---------------------- scrivi un messaggio ----------------------*/

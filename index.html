@@ -29,8 +29,8 @@
                 <!------------------------ nome utente ------------------------>
                 <div class="name_user">
                     <div class="box_name_user">
-                        <img src="img/avatar_1.jpg" alt="">
-                        <h3>Nome Utente</h3>
+                        <img src="img/avatar_io.jpg" alt="">
+                        <h3>Tu</h3>
                     </div>
                     <div class="icons">
                         <i class="fas fa-circle-notch"></i>
@@ -57,9 +57,10 @@
                 </div>
                 <!------------------------ lista utenti ------------------------>
                 <ul class="users_list">
-                    <li v-for="(item, index) in contacts" :key='index' class="box_user">                       
+                    <li @click='showChat(index)' v-for="(item, index) in contacts" :key='index' class="box_user">                       
                         <img :src="`img/avatar${item.avatar}.jpg`" :alt="item.name">                       
                         <h3>{{item.name}}</h3>
+                        <p>{{index}}</p>
                     </li>
                 </ul>
 
@@ -70,9 +71,9 @@
                 <!------------------------ utente in conversazione ------------------------>
                 <div class="user_msg">
                     <div class="box_name_user">
-                        <img src="img/avatar_2.jpg" alt="">
+                        <img :src="`img/avatar${contacts[avatarIndex].avatar}.jpg`" alt="">
                         <div>
-                            <h3>Nome Utente</h3>
+                            <h3>{{contacts[avatarIndex].name}}</h3>
                             <p>Ultimo Accesso oggi alle</p>
                         </div>
                     </div>
@@ -84,79 +85,14 @@
                 </div>
                 <!------------------------ messaggi ------------------------>
                 <div class="chat">
-                    <div class="white_msg_col">
-                        <div class="box_msg">
-                            Ciao! Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur, adipisicing elit., sit amet consectetur adipisicing elit. 
+                    <div class="white_msg_col" v-for="(item, index) in contacts[avatarIndex].messages"  :key='index' >
+                        <div class="box_msg white_msg" >
+                            {{contacts[avatarIndex].messages[0].message}}
                         </div>
                     </div>
                     <div class="green_msg_col">
-                        <div class="box_msg">
-                            Ciao! Come va?
-                        </div>
-                    </div>
-                    <div class="white_msg_col">
-                        <div class="box_msg">
-                            Ciao!
-                        </div>
-                    </div>
-                    <div class="green_msg_col">
-                        <div class="box_msg">
-                            Ciao! Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur, adipisicing elit., sit amet consectetur adipisicing elit. 
-                        </div>
-                    </div>
-                    <div class="green_msg_col">
-                        <div class="box_msg">
-                            Ciao!
-                        </div>
-                    </div>
-                    <div class="white_msg_col">
-                        <div class="box_msg">
-                            Ciao! Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur, adipisicing elit., sit amet consectetur adipisicing elit. 
-                        </div>
-                    </div>
-                    <div class="green_msg_col">
-                        <div class="box_msg">
-                            Ciao! Come va?
-                        </div>
-                    </div>
-                    <div class="white_msg_col">
-                        <div class="box_msg">
-                            Ciao!
-                        </div>
-                    </div>
-                    <div class="green_msg_col">
-                        <div class="box_msg">
-                            Ciao! Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur, adipisicing elit., sit amet consectetur adipisicing elit. 
-                        </div>
-                    </div>
-                    <div class="green_msg_col">
-                        <div class="box_msg">
-                            Ciao!
-                        </div>
-                    </div>
-                    <div class="white_msg_col">
-                        <div class="box_msg">
-                            Ciao! Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur, adipisicing elit., sit amet consectetur adipisicing elit. 
-                        </div>
-                    </div>
-                    <div class="green_msg_col">
-                        <div class="box_msg">
-                            Ciao! Come va?
-                        </div>
-                    </div>
-                    <div class="white_msg_col">
-                        <div class="box_msg">
-                            Ciao!
-                        </div>
-                    </div>
-                    <div class="green_msg_col">
-                        <div class="box_msg">
-                            Ciao! Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur, adipisicing elit., sit amet consectetur adipisicing elit. 
-                        </div>
-                    </div>
-                    <div class="green_msg_col">
-                        <div class="box_msg">
-                            Ciao!
+                        <div class="box_msg green_msg">
+                            Ciao! Come va? 
                         </div>
                     </div>
                 </div>
