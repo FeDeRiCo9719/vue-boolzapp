@@ -42,7 +42,7 @@ var app = new Vue({
                     {
                         date: '20/03/2020 16:35:00',
                         message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
+                        status: 'sent'
                     }
                 ],
             },
@@ -125,7 +125,7 @@ var app = new Vue({
                     {
                         date: '20/03/2020 16:35:00',
                         message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
+                        status: 'sent'
                     }
                 ],
             },
@@ -214,24 +214,13 @@ var app = new Vue({
             }
         ],
         avatarIndex:0,
-        msgIndex: 0,
-        
     },
     methods: {
         showChat: function(index) {
-            // console.log(index);
             this.avatarIndex = index;
-            // console.log(this.avatarIndex);
-            // this.msgIndex ++
-            // console.log(this.msgIndex);
+            console.log(this.avatarIndex);
+            console.log(this.contacts[this.avatarIndex].messages.status); 
         }
     }
 });
 
-/*
-1. capire come trasportare l'index del <li> nella function per dare lo stesso valore a avtarIndex
-
-2. ciclare i messaggi da stampare all'interno della singola chat
-
-3. capire come filtrare i messaggi in base a chi li ha inviati o ricevuti (status)
-*/

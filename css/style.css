@@ -151,15 +151,15 @@ i:hover {
     align-items: center;
 }
 .search {
-    width: 90%;
+    width: calc(100% - 50px);
     border-radius: 0px 20px 20px 0px;
 }
 .search_box .fa-search {
     font-size: 14px;
 }
 .search_icon_box {
-    background-color: white;
-    width: 10%;
+    background-color: rgb(255, 255, 255);
+    width: 50px;
     height: 100%;
     border-radius: 20px 0px 0px 20px;
 
@@ -212,7 +212,7 @@ i:hover {
     overflow-y: scroll;
     padding: 50px 80px;
 }
-.white_msg_col, .green_msg_col {
+.msg_col {
     width: 100%;
     /* border: 1px solid rgba(255, 0, 0, 0.315); */
     color: black;
@@ -220,23 +220,27 @@ i:hover {
 
     display: flex;
 }
-.white_msg_col {
-    justify-content: flex-start;
-}
-.green_msg_col {
-    justify-content: flex-end;
-}
-.white_msg {
+.received {
     background-color: white;
 }
-.green_msg {
+.sent {
     background-color: rgb(211, 243, 184);
+    margin-left: auto;
 }
 .box_msg {
     max-width: 70%;
     border-radius: 7px;
     padding: 10px;
+    padding-right: 120px;
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.178);
+    position: relative;
+}
+.msgDate {
+    position: absolute;
+    bottom: 3px;
+    right: 5px;
+    font-size: 10px;
+    color: rgb(156, 156, 156);
 }
 
 /*---------------------- scrivi un messaggio ----------------------*/
