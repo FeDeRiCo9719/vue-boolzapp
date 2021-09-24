@@ -215,6 +215,7 @@ var app = new Vue({
         ],
         avatarIndex: 0,
         textMessage: '',
+        searchUser: '',
     },
     methods: {
         showChat: function(index) {
@@ -256,6 +257,16 @@ var app = new Vue({
                 this.contacts[this.avatarIndex].messages.push(msgReceived);
             }, 1000);
         }, 
+
+        /* MILESTONE 4 
+        Ricerca utente: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i
+        contatti il cui nome contiene le lettere inserite (es. Marco, Matteo Martina -> Scrivo
+        “mar” rimangono solo Marco e Martina) */
+        // 1. collego l'input con una variabile al file vue => v-model
+        // 2. creo una funzione collegata alla tastiera => v-on:keyup=""
+        // 3.  => 
+        filterUser: function() {
+            console.log(this.searchUser);
+        }
     },
 });
-

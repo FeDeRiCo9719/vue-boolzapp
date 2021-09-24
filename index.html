@@ -53,7 +53,7 @@
                     <div class="search_icon_box">
                         <i class="fas fa-search"></i>
                     </div>
-                    <input class="search" type="text"  placeholder="Cerca o inizia una nuova chat">
+                    <input v-on:keyup="filterUser" v-model="searchUser" class="search" type="text"  placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!------------------------ lista utenti ------------------------>
                 <ul class="users_list">
