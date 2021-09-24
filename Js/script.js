@@ -221,13 +221,11 @@ var app = new Vue({
             this.avatarIndex = index;
         },
 
-        // MILESTONE 3 (invio messaggio)
+        // MILESTONE 3 pt.1 (invio messaggio) 
         // 1. scrivo qualcosa nell'input => 
         // 2. al click del tasto 'enter' (se l'input è vuoto non succede niente) => 
         // 3. stampo il messaggio nella chat (il messaggio ha la classe 'sent')
         addMessage: function() {
-            console.log(this.textMessage);
-
             if (this.textMessage != '') {
 
                 const newMessage = {
@@ -243,7 +241,21 @@ var app = new Vue({
             
             // svuoto il campo input
             this.textMessage = '';
-        }
-    }
+
+            // MILESTONE 3 pt.2 (risposta messaggio)
+            // dopo 1s dall'invio msg => generare un messagio bianco ('ok')
+            // 1.  => funzione con setTimeout (=>'this')
+            // 2.  => creare un oggetto temporaneo (received)
+            // 3.  => dopo 1s pusha l'oggetto in 'messages'
+            setTimeout( () => {
+                const msgReceived = {
+                    date: 'data',
+                    message: 'okay',
+                    status: 'received'
+                }
+                this.contacts[this.avatarIndex].messages.push(msgReceived);
+            }, 1000);
+        }, 
+    },
 });
 
