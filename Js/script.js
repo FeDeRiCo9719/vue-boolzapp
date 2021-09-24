@@ -215,11 +215,6 @@ var app = new Vue({
         ],
         avatarIndex: 0,
         textMessage: '',
-        newMessage: {
-            date: 'ajoo!',
-            message: '',
-            status: 'sent'
-        },
     },
     methods: {
         showChat: function(index) {
@@ -234,12 +229,17 @@ var app = new Vue({
             console.log(this.textMessage);
 
             if (this.textMessage != '') {
-                this.newMessage.message = this.textMessage;
-            }
-            console.log(this.newMessage);
 
-            this.contacts[this.avatarIndex].messages.push(this.newMessage);
-            console.log(this.contacts[this.avatarIndex].messages);
+                const newMessage = {
+                    date: 'data',
+                    message: this.textMessage,
+                    status: 'sent'
+                }
+                console.log(newMessage);
+
+                this.contacts[this.avatarIndex].messages.push(newMessage);
+                console.log(this.contacts[this.avatarIndex].messages);
+            }
             
             // svuoto il campo input
             this.textMessage = '';
