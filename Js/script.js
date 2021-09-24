@@ -213,13 +213,36 @@ var app = new Vue({
                 ],
             }
         ],
-        avatarIndex:0,
+        avatarIndex: 0,
+        textMessage: '',
+        newMessage: {
+            date: 'ajoo!',
+            message: '',
+            status: 'sent'
+        },
     },
     methods: {
         showChat: function(index) {
             this.avatarIndex = index;
-            console.log(this.avatarIndex);
-            console.log(this.contacts[this.avatarIndex].messages.status); 
+        },
+
+        // MILESTONE 3 (invio messaggio)
+        // 1. scrivo qualcosa nell'input => 
+        // 2. al click del tasto 'enter' (se l'input è vuoto non succede niente) => 
+        // 3. stampo il messaggio nella chat (il messaggio ha la classe 'sent')
+        addMessage: function() {
+            console.log(this.textMessage);
+
+            if (this.textMessage != '') {
+                this.newMessage.message = this.textMessage;
+            }
+            console.log(this.newMessage);
+
+            this.contacts[this.avatarIndex].messages.push(this.newMessage);
+            console.log(this.contacts[this.avatarIndex].messages);
+            
+            // svuoto il campo input
+            this.textMessage = '';
         }
     }
 });
