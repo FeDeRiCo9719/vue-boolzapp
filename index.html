@@ -57,7 +57,11 @@
                 </div>
                 <!------------------------ lista utenti ------------------------>
                 <ul class="users_list">
-                    <li @click='showChat(index)' v-for="(item, index) in contacts" :key='index' class="box_user">                       
+                    <li v-if='seen' @click='showChat(index)' v-for="(item, index) in contacts" :key='index' class="box_user">                       
+                        <img :src="`img/avatar${item.avatar}.jpg`" :alt="item.name">                       
+                        <h3>{{item.name}}</h3>
+                    </li>
+                    <li @click='showChat(index)' v-for="(item, index) in listFiltered" :key='index' class="box_user">                       
                         <img :src="`img/avatar${item.avatar}.jpg`" :alt="item.name">                       
                         <h3>{{item.name}}</h3>
                     </li>

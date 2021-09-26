@@ -216,6 +216,11 @@ var app = new Vue({
         avatarIndex: 0,
         textMessage: '',
         searchUser: '',
+        counter: 0,
+        seen: true,
+
+        // lista utenti - array filtrato
+        listFiltered: [],
     },
     methods: {
         showChat: function(index) {
@@ -234,10 +239,10 @@ var app = new Vue({
                     message: this.textMessage,
                     status: 'sent'
                 }
-                console.log(newMessage);
+                // console.log(newMessage);
 
                 this.contacts[this.avatarIndex].messages.push(newMessage);
-                console.log(this.contacts[this.avatarIndex].messages);
+                // console.log(this.contacts[this.avatarIndex].messages);
             }
             
             // svuoto il campo input
@@ -259,14 +264,23 @@ var app = new Vue({
         }, 
 
         /* MILESTONE 4 
-        Ricerca utente: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i
-        contatti il cui nome contiene le lettere inserite (es. Marco, Matteo Martina -> Scrivo
-        “mar” rimangono solo Marco e Martina) */
-        // 1. collego l'input con una variabile al file vue => v-model
-        // 2. creo una funzione collegata alla tastiera => v-on:keyup=""
-        // 3.  => 
+        Ricerca utente: scrivendo qualcosa nell’input a sinistra, 
+        vengono visualizzati solo i contatti il cui nome contiene
+        le lettere inserite (es. Marco, Matteo Martina -> 
+        Scrivo “mar” rimangono solo Marco e Martina) */
+
+        // CREARE UN NUOVO ARRAY FILTRATO CHE SI SOSTITUISCE A 'users_list'
         filterUser: function() {
-            console.log(this.searchUser);
+            this.seen = false;
+            this.listFiltered = this.contacts.filter( (item) => {
+                if ( item.name[this.counter] == this.searchUser[this.counter] ) {
+                    return true;
+                } else {
+                    return false;
+                }               
+            });
+            console.log(this.listFiltered);
+        
         }
     },
 });
