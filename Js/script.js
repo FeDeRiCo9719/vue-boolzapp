@@ -218,6 +218,7 @@ var app = new Vue({
         searchUser: '',
         counter: 0,
         seen: true,
+        seenFilter: false,
 
         // lista utenti - array filtrato
         listFiltered: [],
@@ -271,15 +272,35 @@ var app = new Vue({
 
         // CREARE UN NUOVO ARRAY FILTRATO CHE SI SOSTITUISCE A 'users_list'
         filterUser: function() {
-            this.seen = false;
-            this.listFiltered = this.contacts.filter( (item) => {
-                if ( item.name[this.counter] == this.searchUser[this.counter] ) {
-                    return true;
+
+            if (this.searchUser != '') {
+                this.seen = false;
+            } else {
+                this.seen = true;
+            }
+
+            this.contacts.filter( (item) => {
+                if ( item.name.toLowerCase().includes(this.searchUser.toLowerCase()) == true ) {
+                    console.log('seeeeeee');
+                    this.listFiltered.push(item);
                 } else {
-                    return false;
-                }               
+                    console.log('NO');
+                }              
             });
-            console.log(this.listFiltered);
+            
+            
+
+            // this.listFiltered = this.contacts.filter( (item) => {
+            //     if ( item.name[this.counter] == this.searchUser[this.counter] ) {
+            //         return true;
+            //     } else {
+            //         return false;
+            //     }               
+            // });
+            // console.log(this.listFiltered);
+
+            this.counter++
+            // console.log(this.counter);
         
         }
     },
