@@ -216,12 +216,7 @@ var app = new Vue({
         avatarIndex: 0,
         textMessage: '',
         searchUser: '',
-        counter: 0,
-        seen: true,
-        seenFilter: false,
-
-        // lista utenti - array filtrato
-        listFiltered: [],
+        
     },
     methods: {
         showChat: function(index) {
@@ -269,39 +264,23 @@ var app = new Vue({
         vengono visualizzati solo i contatti il cui nome contiene
         le lettere inserite (es. Marco, Matteo Martina -> 
         Scrivo “mar” rimangono solo Marco e Martina) */
+        // 1- v-model nel campo input
+        // 2- creare l'evento keyup
+        // 3- forEach per ciclare l'array con arrow function passando l'elemento dell'array
+        // 4- SE item.name.toLowerCase().includes(this.searchUser.toLowerCase()) allora item.visible == true
+        // 5- Altrimenti item.visible == false
+        // 6- collegare il <li> alla proprietà visible
 
         // CREARE UN NUOVO ARRAY FILTRATO CHE SI SOSTITUISCE A 'users_list'
-        filterUser: function() {
+        filterUser() {
 
-            if (this.searchUser != '') {
-                this.seen = false;
-            } else {
-                this.seen = true;
-            }
-
-            this.contacts.filter( (item) => {
-                if ( item.name.toLowerCase().includes(this.searchUser.toLowerCase()) == true ) {
-                    console.log('seeeeeee');
-                    this.listFiltered.push(item);
+            this.contacts.forEach( (item) => {
+                if ( item.name.toLowerCase().includes(this.searchUser.toLowerCase()) ) {
+                    item.visible = true;
                 } else {
-                    console.log('NO');
+                    item.visible = false;
                 }              
             });
-            
-            
-
-            // this.listFiltered = this.contacts.filter( (item) => {
-            //     if ( item.name[this.counter] == this.searchUser[this.counter] ) {
-            //         return true;
-            //     } else {
-            //         return false;
-            //     }               
-            // });
-            // console.log(this.listFiltered);
-
-            this.counter++
-            // console.log(this.counter);
-        
         }
     },
 });
